@@ -1,13 +1,46 @@
 {
   "name": "globalizr",
+  "description": "A comprehensive JavaScript library for handling all features of Intl API, including date, number, currency, pluralization, and list formatting. Simplify internationalization with robust and user-friendly utilities.",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Gabriel Juninho Paulista <gabrieltobing789@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "intl",
+    "internationalization",
+    "localization",
+    "i18n",
+    "javascript",
+    "typescript",
+    "date-format",
+    "number-format",
+    "currency-format",
+    "pluralization",
+    "list-format",
+    "timezone",
+    "locale",
+    "globalization",
+    "utilities",
+    "language-support"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsup",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "npm run format && npm run check-types && npm run lint && npm run check-format",
+    "start": "tsup --watch",
     "check-format": "prettier --check .",
     "check-types": "tsc --pretty --noEmit"
   },
@@ -15,8 +48,6 @@
     "type": "git",
     "url": "git+https://github.com/gabrieljuninho/globalizr.git"
   },
-  "author": "Gabriel Juninho Paulista <gabrieltobing789@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabrieljuninho/globalizr/issues"
   },
@@ -26,6 +57,9 @@
     "eslint": "^9.17.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1"
   }
